@@ -41,25 +41,68 @@
             padding: 20px;
             text-align: center; /* Centrar contenido */
         }
+        .catalogo {
+            display: flex;
+            flex-wrap: wrap; /* Permite que las imágenes se ajusten */
+            justify-content: center; /* Centrar las imágenes */
+            margin-top: 20px; /* Espacio entre el párrafo y el catálogo */
+        }
+        .juego {
+            margin: 10px;
+            text-align: center; /* Centrar los títulos de las imágenes */
+        }
+        .juego img {
+            max-width: 100%; /* Asegura que la imagen no exceda el contenedor */
+            height: auto;
+            max-height: 200px; /* Limitar la altura para las imágenes */
+            cursor: pointer; /* Cambia el cursor al pasar por encima */
+            border-radius: 10px; /* Bordes redondeados para las imágenes */
+            transition: transform 0.3s; /* Animación de transformación */
+        }
+        .juego img:hover {
+            transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+        }
         footer {
             background-color: #36414e;
             padding: 10px 20px;
             text-align: center;
-            color:#f7f7c9;
+            color: #f7f7c9;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="logo final.png" alt="Mi Logo" style="max-height: 60px;"> <!-- Ajusta el tamaño de la imagen según sea necesario -->
+    <img src="logo final.png" alt="Mi Logo" style="max-height: 60px;"> 
     <button class="menu-button">Menú</button>
 </header>
 
 <main>
     <h1>JUEGOS DISPONIBLES PARA ANDROID</h1>
     <p>Este es un párrafo de ejemplo donde puedes describir de qué trata tu sitio web. Aquí puedes incluir más información o detalles importantes.</p>
-    <img src="logodrm.png" alt="dino runner master download for android">
+    <img src="logodrm.png" alt="dino runner master download for android" style="max-height: 200px; margin-top: 20px;">
+
+    <div class="catalogo">
+        <div class="juego">
+            <a href="https://play.google.com/store/apps/details?id=com.ejemplo.juego1" target="_blank">
+                <img src="juego1.png" alt="Juego 1">
+                <h3>Juego 1</h3>
+            </a>
+        </div>
+        <div class="juego">
+            <a href="https://play.google.com/store/apps/details?id=com.ejemplo.juego2" target="_blank">
+                <img src="juego2.png" alt="Juego 2">
+                <h3>Juego 2</h3>
+            </a>
+        </div>
+        <div class="juego">
+            <a href="https://play.google.com/store/apps/details?id=com.ejemplo.juego3" target="_blank">
+                <img src="juego3.png" alt="Juego 3">
+                <h3>Juego 3</h3>
+            </a>
+        </div>
+        <!-- Agrega más juegos aquí -->
+    </div>
 </main>
 
 <footer>
