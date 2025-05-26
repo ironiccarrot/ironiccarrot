@@ -400,35 +400,9 @@ label[for=modal]:hover:before {
     display:none;
 }
 
-/* Estilos popup */
-.contenido_popup_sociales{
- display:none;
-
-}
 }
     </style>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D29ZJWZBWZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-D29ZJWZBWZ');
-</script>
-<?php require_once('userAgent.php'); 
-
-$agent = new userAgent();
-$UAString = $agent->generate();
-?>
-
-<?php include('popads.php'); ?>
-
-<script type="text/javascript">
-    new PushSubscriber(window, {
-    }).subscribe().catch(function (result) {});
-</script>
 </head>
 <body>
     <div style="height:0px;">
@@ -450,14 +424,7 @@ $UAString = $agent->generate();
              <a class="navbar-brand" href="#" target="_blank" rel="nofollow"><img src="ironiccarrot.png"  width="220" alt="ironiccarrot"></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <button class="add-button">Instala FutbolTotal</button>
-                </li>
-                <!-- <li>
-                    vacio <a href="https://futboltotal.tk/ayuda.php" class="lista">Ayuda</a>
-                </li>-->
-            </ul>
+            
         </div>
     </div>
 </nav>
@@ -467,9 +434,6 @@ $UAString = $agent->generate();
             <h1>JUEGOS DISPONIBLES PARA ANDROID</h1><br>
        
         </div><br><br>
-        <div class="col-xs-12">
-            <h2>Canales deportivos online</h2>
-        </div>
         <div class="video"> 
     <iframe width="352" height="198" src="https://www.youtube.com/embed/imAIhUDcWc4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
     
