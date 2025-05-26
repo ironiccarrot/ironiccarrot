@@ -44,17 +44,8 @@
             padding: 20px;
             text-align: center; /* Centrar contenido */
         }
-        .catalogo {
-            display: flex;
-            flex-wrap: wrap; /* Permite que las imágenes se ajusten */
-            justify-content: center; /* Centrar las imágenes */
-            margin-top: 20px; /* Espacio entre el párrafo y el catálogo */
-        }
-        .juego {
-            margin: 10px;
-            text-align: center; /* Centrar los títulos de las imágenes */
-        }
-        .juego img {
+    
+        .column-custom img {
             max-width: 100%; /* Asegura que la imagen no exceda el contenedor */
             height: auto;
             max-height: 200px; /* Limitar la altura para las imágenes */
@@ -62,7 +53,7 @@
             border-radius: 10px; /* Bordes redondeados para las imágenes */
             transition: transform 0.3s; /* Animación de transformación */
         }
-        .juego img:hover {
+        .column-custom img:hover {
             transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
         }
         footer {
