@@ -15,65 +15,102 @@
             flex-direction: column;
             height: 100vh;
             background: #53bff5;
-background: radial-gradient(circle,rgba(83, 191, 245, 1) 0%, rgba(44, 98, 222, 1) 100%);
+            background: radial-gradient(circle, rgba(83, 191, 245, 1) 0%, rgba(44, 98, 222, 1) 100%);
         }
+
         header {
             display: flex;
-            justify-content: center; /* Centrar absolutamente */
+            justify-content: center;
             align-items: center;
-            position: relative; /* Necesario para colocar el botón de menú */
+            position: relative;
             padding: 10px 10px;
-            background-color: #1b2631;
+            background-color: #36414e;
         }
-        .menu-button {
-            position: absolute; /* Botón fijado a la derecha */
+
+        .menu-icon {
+            position: absolute;
             right: 20px;
             top: 10px;
-            background-color: #007bff; 
-            color: white;
-            border: none;
-            padding: 10px 20px;
             cursor: pointer;
-            border-radius: 5px; 
-            transition: background-color 0.3s;
+            font-size: 24px; /* Tamaño del ícono */
+            color: white; /* Color del ícono */
         }
-        .menu-button:hover {
-            background-color: #0056b3; 
-        }
+
         main {
-            flex: 1; /* Ocupa el espacio restante */
+            flex: 1;
             padding: 20px;
-            text-align: center; /* Centrar contenido */
+            text-align: center;
         }
-       .column-custom {
-    border-radius: 5px;
-    background-color: rgba(14, 32, 46, 0.7);
-    padding: 25px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-    
+
+        .column-custom {
+            border-radius: 5px;
+            background-color: rgba(14, 32, 46, 0.7);
+            padding: 25px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
         .column-custom img {
-            max-width: 100%; /* Asegura que la imagen no exceda el contenedor */
+            max-width: 100%;
             height: auto;
-            max-height: 200px; /* Limitar la altura para las imágenes */
-            cursor: pointer; /* Cambia el cursor al pasar por encima */
-            border-radius: 10px; /* Bordes redondeados para las imágenes */
-            transition: transform 0.3s; /* Animación de transformación */
+            max-height: 200px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.3s;
         }
+
         .column-custom img:hover {
-            transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+            transform: scale(1.05);
         }
 
         .column-custom a {
-            text-decoration:none;
-            color:#fdfefe;
+            text-decoration: none;
+            color: #fdfefe;
         }
+
         footer {
             background-color: #36414e;
             padding: 10px 20px;
             text-align: center;
             color: #f7f7c9;
+        }
+
+        /* Estilos del pop-up */
+        .popup {
+            display: none; /* Ocultamos el pop-up inicialmente */
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000; /* Asegurar que el pop-up esté por encima */
+        }
+
+        .popup-header {
+            background-color: #36414e;
+            color: white;
+            padding: 10px;
+            text-align: right;
+        }
+
+        .popup-header .close-button {
+            cursor: pointer;
+            color: white;
+        }
+
+        .popup-content {
+            padding: 20px;
+        }
+
+        .popup-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .popup-content li {
+            margin: 10px 0;
         }
     </style>
 </head>
@@ -81,31 +118,53 @@ background: radial-gradient(circle,rgba(83, 191, 245, 1) 0%, rgba(44, 98, 222, 1
 
 <header>
     <img src="logo final.png" alt="Mi Logo" style="max-height: 60px;"> 
-    <button class="menu-button">Menú</button>
+    <i class="fa fa-bars menu-icon" onclick="togglePopup()"></i> <!-- Ícono de menú -->
 </header>
 
 <main>
     <h1>JUEGOS DISPONIBLES PARA ANDROID</h1>
     <p>Este es un párrafo de ejemplo donde puedes describir de qué trata tu sitio web. Aquí puedes incluir más información o detalles importantes.</p>
    <div class="column-wrap clearfix">
-            <div class="col-xs-12">
-                <hr>
+        <div class="col-xs-12">
+            <hr>
+        </div>
+        <div class="col-xs-12 col-sm-4 column-custom-wrap">
+            <div class="column-custom">
+               <a href="https://play.google.com/store/apps/details?id=com.ejemplo.juego3"><img src="logodrm.png" width="50%" alt="Descargar Dino runner master para android">
+               <h3 style="padding-bottom: 5px">Dino Runner Master</h3></a>
             </div>
-            <div class="col-xs-12 col-sm-4 column-custom-wrap">
-                <div class="column-custom">
-                   <a href="https://play.google.com/store/apps/details?id=com.ejemplo.juego3"><img src="logodrm.png" width="50%" alt="Descargar Dino runner master para android">
-                   <h3 style="padding-bottom: 5px">Dino Runner Master</h3></a>
-                </div>
-            </div>
+        </div>
+    </div>
 </main>
 
 <footer>
     &copy; <span id="current-year"></span> Ironic Carrot
 </footer>
 
+<!-- Pop-up para el menú -->
+<div class="popup" id="menuPopup">
+    <div class="popup-header">
+        <span class="close-button" onclick="togglePopup()">✖</span>
+    </div>
+    <div class="popup-content">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Acerca de</a></li>
+            <li><a href="#">Servicios</a></li>
+        </ul>
+    </div>
+</div>
+
 <script>
     // Script para mostrar el año actual en el pie de página
     document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Función para abrir y cerrar el pop-up
+    function togglePopup() {
+        const popup = document.getElementById('menuPopup');
+        popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+    }
 </script>
 
 </body>
