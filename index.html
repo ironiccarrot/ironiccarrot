@@ -204,7 +204,19 @@
 <footer>
     &copy; <span id="current-year"></span> Ironic Carrot
 </footer>
-
+<!-- Ventana de opciones de compartir -->
+<div id="shareModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <h2>Compartir en:</h2>
+    <div class="share-options">
+      <a href="#" id="whatsapp" target="_blank">WhatsApp</a>
+      <a href="#" id="facebook" target="_blank">Facebook</a>
+      <a href="#" id="twitter" target="_blank">Twitter</a>
+      <!-- Agrega más redes si quieres -->
+    </div>
+  </div>
+</div>
 <!-- Pop-up para el menú -->
 <div class="popup" id="menuPopup">
     <div class="popup-header">
@@ -262,19 +274,7 @@ window.onclick = (event) => {
   }
 };
 </script>
-<!-- Ventana de opciones de compartir -->
-<div id="shareModal" class="modal">
-  <div class="modal-content">
-    <span class="close" id="closeModal">&times;</span>
-    <h2>Compartir en:</h2>
-    <div class="share-options">
-      <a href="#" id="whatsapp" target="_blank">WhatsApp</a>
-      <a href="#" id="facebook" target="_blank">Facebook</a>
-      <a href="#" id="twitter" target="_blank">Twitter</a>
-      <!-- Agrega más redes si quieres -->
-    </div>
-  </div>
-</div>
+
 
 </body>
 </html>
