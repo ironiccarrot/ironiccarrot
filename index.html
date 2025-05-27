@@ -20,18 +20,15 @@
 
         header {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: space-between; /* Espacio entre logo y menú */
+            align-items: center; /* Alineación vertical de los elementos */
             position: relative;
-            padding: 10px 10px;
+            padding: 10px 20px; /* Ajuste de padding para mejor espacio */
             background-color: #012f6d;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
         .menu-icon {
-            position: absolute;
-            right: 20px;
-            top: 10px;
             cursor: pointer;
             font-size: 24px; /* Tamaño del ícono */
             color: white; /* Color del ícono */
@@ -88,15 +85,16 @@
             background-color: #012f6d;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             z-index: 1000; /* Asegurar que el pop-up esté por encima */
-            border-radius:5px;
+            border-radius: 5px;
         }
 
         .popup-header {
-    background-color: #012f6d;
-    color: white;
-    padding: 5px 10px 0px 0px;
-    text-align: right;
-    border-radius: 20px;}
+            background-color: #012f6d;
+            color: white;
+            padding: 5px 10px 0px 0px;
+            text-align: right;
+            border-radius: 20px;
+        }
 
         .popup-header .close-button {
             cursor: pointer;
@@ -105,7 +103,7 @@
 
         .popup-content {
             padding: 20px;
-            color:white;
+            color: white;
         }
 
         .popup-content ul {
@@ -116,11 +114,13 @@
         .popup-content li {
             margin: 10px 0;
         }
-        .popup-content a{
-            color:white;
+
+        .popup-content a {
+            color: white;
         }
-        h3{
-            font-size:15px;
+
+        h3 {
+            font-size: 15px;
         }
     </style>
 </head>
@@ -133,15 +133,17 @@
 
 <main>
     <h1>JUEGOS DISPONIBLES PARA ANDROID</h1>
-    <p>Descargalos gratis en tu celular android y diviertete.</p>
-   <div class="column-wrap clearfix">
+    <p>Descargalos gratis en tu celular android y diviértete.</p>
+    <div class="column-wrap clearfix">
         <div class="col-xs-12">
             <br>
         </div>
         <div class="col-xs-12 col-sm-4 column-custom-wrap">
             <div class="column-custom">
-               <a href="https://play.google.com/store/apps/details?id=com.ejemplo.juego3"><img src="logodrm.png" width="50%" alt="Descargar Dino runner master para android">
-               <h3 style="padding-bottom: 5px">Dino Runner Master</h3></a>
+               <a href="https://play.google.com/store/apps/details?id=com.ejemplo.juego3">
+                   <img src="logodrm.png" width="50%" alt="Descargar"> 
+                   <h3 style="padding-bottom: 5px">Dino Runner Master</h3>
+               </a>
             </div>
         </div>
     </div>
