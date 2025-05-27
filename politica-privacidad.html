@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link  rel="icon" href="icon.png" type="image/png" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style02.css">
+    <link rel="icon" sizes="16x16" href="16.png">
+    <link rel="icon" sizes="32x32" href="32.png">
+    <link rel="icon" sizes="48x48" href="48.png">
+    <link rel="icon" sizes="192x192" href="192.png" type="image/png">
+
+    <title>Politica de privacidad Dino Runner Master</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background: #53bff5;
+            background: radial-gradient(circle, rgba(83, 191, 245, 1) 0%, rgba(44, 98, 222, 1) 100%);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between; /* Espacio entre logo y menú */
+            align-items: center; /* Alineación vertical de los elementos */
+            position: relative;
+            padding: 10px 20px; /* Ajuste de padding para mejor espacio */
+            background-color: #012f6d;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-icon {
+            cursor: pointer;
+            font-size: 24px; /* Tamaño del ícono */
+            color: white; /* Color del ícono */
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .column-custom {
+            border-radius: 5px;
+            background-color: rgba(14, 32, 46, 0.5);
+            padding: 25px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .column-custom img {
+            max-width: 100%;
+            height: auto;
+            max-height: 200px;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+
+        .column-custom img:hover {
+            transform: scale(1.05);
+        }
+
+        .column-custom a {
+            text-decoration: none;
+            color: #fdfefe;
+        }
+
+        footer {
+            background-color: #36414e;
+            padding: 10px 20px;
+            text-align: center;
+            color: #f7f7c9;
+        }
+
+        /* Estilos del pop-up */
+        .popup {
+            display: none; /* Ocultamos el pop-up inicialmente */
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background-color: #012f6d;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000; /* Asegurar que el pop-up esté por encima */
+            border-radius: 5px;
+        }
+
+        .popup-header {
+            background-color: #012f6d;
+            color: white;
+            padding: 5px 10px 0px 0px;
+            text-align: right;
+            border-radius: 20px;
+        }
+
+        .popup-header .close-button {
+            cursor: pointer;
+            color: white;
+        }
+
+        .popup-content {
+            padding: 20px;
+            color: white;
+        }
+
+        .popup-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .popup-content li {
+            margin: 10px 0;
+        }
+
+        .popup-content a {
+            color: white;
+        }
+      .bck{
+        width:95%;
+        background-color:#fdfefe;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        border-radius:5px;
+        color:black;
+      }
+
+        h3 {
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo final.png" alt="Mi Logo" style="max-height: 60px;"> 
+    <i class="fa fa-bars menu-icon" onclick="togglePopup()"></i> <!-- Ícono de menú -->
+</header>
+
+<main>
+  <div class="bck">
+    <h1>JUEGOS DISPONIBLES PARA ANDROID</h1>
+  </div>div>
+</main>
+
+<footer>
+    &copy; <span id="current-year"></span> Ironic Carrot
+</footer>
+
+<!-- Pop-up para el menú -->
+<div class="popup" id="menuPopup">
+    <div class="popup-header">
+        <span class="close-button" onclick="togglePopup()">✖</span>
+    </div>
+    <div class="popup-content">
+        <ul>
+            <li><a href="#">Seguir en Youtube</a></li>
+            <li><a href="#">Compartir</a></li>
+            <li><a href="#">Google Play</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    // Script para mostrar el año actual en el pie de página
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Función para abrir y cerrar el pop-up
+    function togglePopup() {
+        const popup = document.getElementById('menuPopup');
+        popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
+
+</body>
+</html>
