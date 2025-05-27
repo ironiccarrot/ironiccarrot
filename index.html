@@ -11,7 +11,8 @@
     <link rel="icon" sizes="32x32" href="32.png">
     <link rel="icon" sizes="48x48" href="48.png">
     <link rel="icon" sizes="192x192" href="192.png" type="image/png">
-
+    <!-- Incluye iconos de Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <title>Ironic Carrot</title>
     <style>
         body {
@@ -129,7 +130,37 @@
         h3 {
             font-size: 15px;
         }
-       
+         /* Estilos para la barra flotante */
+  .floating-bar {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px 0 0 8px;
+    padding: 10px 0;
+    z-index: 1000;
+  }
+
+  /* Estilo para los iconos */
+  .icon {
+    color: #fff;
+    font-size: 24px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  /* Animación al hover */
+  .icon:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: scale(1.2);
+  }
     </style>
 </head>
 <body>
@@ -175,6 +206,28 @@
         </ul>
     </div>
 </div>
+<div class="floating-bar">
+  <!-- icono de compartir (parte superior) -->
+  <div class="icon" title="Compartir" onclick="toggleShareOptions()">
+    <i class="fas fa-share-alt"></i>
+  </div>
+  
+  <!-- Opciones de redes sociales, inicialmente ocultas -->
+  <div id="share-options" style="display: none; margin-top: 10px; flex-direction: column; align-items: center;">
+    <!-- WhatsApp -->
+    <a class="icon" title="Compartir en WhatsApp" href="#" onclick="shareWhatsApp(event)">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <!-- Facebook -->
+    <a class="icon" title="Compartir en Facebook" href="#" onclick="shareFacebook(event)">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <!-- X (Twitter) -->
+    <a class="icon" title="Compartir en Twitter" href="#" onclick="shareTwitter(event)">
+      <i class="fab fa-x-twitter"></i>
+    </a>
+  </div>
+</div>
 
 <script>
     // Script para mostrar el año actual en el pie de página
@@ -185,6 +238,39 @@
         const popup = document.getElementById('menuPopup');
         popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
     }
+</script>
+
+    <script>
+  // Función para mostrar/ocultar opciones de compartir
+  function toggleShareOptions() {
+    const options = document.getElementById('share-options');
+    if (options.style.display === 'none') {
+      options.style.display = 'flex';
+    } else {
+      options.style.display = 'none';
+    }
+  }
+
+  const urlToShare = encodeURIComponent(window.location.href);
+  const textToShare = encodeURIComponent("¡Mira esto!");
+
+  function shareWhatsApp(e) {
+    e.preventDefault();
+    const whatsappUrl = `https://api.whatsapp.com/send?text=${textToShare}%20${urlToShare}`;
+    window.open(whatsappUrl, '_blank');
+  }
+
+  function shareFacebook(e) {
+    e.preventDefault();
+    const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${urlToShare}`;
+    window.open(facebookUrl, '_blank');
+  }
+
+  function shareTwitter(e) {
+    e.preventDefault();
+    const twitterUrl = `https://twitter.com/intent/tweet?url=${urlToShare}&text=${textToShare}`;
+    window.open(twitterUrl, '_blank');
+  }
 </script>
 
    </body>
